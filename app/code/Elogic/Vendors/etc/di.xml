@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <preference for="Elogic\Vendors\Api\Data\VendorsInterface"
+                type="Elogic\Vendors\Model\VendorsModel" />
+    <preference for="Elogic\Vendors\Api\VendorsRepositoryInterface"
+                type="Elogic\Vendors\Model\VendorsRepository" />
+    <virtualType name="Elogic\Vendors\Model\ResourceModel\Grid\Collection\VendorsCollection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">elogic_vendors</argument>
+            <argument name="resourceModel" xsi:type="string">Elogic\Vendors\Model\ResourceModel\VendorsResourceModel</argument>
+        </arguments>
+    </virtualType>
+    <virtualType name="ElogicVendorsGridDataProvider" type="Magento\Framework\View\Element\UiComponent\DataProvider\DataProvider">
+        <arguments>
+            <argument name="collection" xsi:type="object" shared="false">Elogic\Vendors\Model\ResourceModel\Grid\Collection\VendorsCollection</argument>
+        </arguments>
+    </virtualType>
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="elogic_vendors_listing_data_source" xsi:type="string">Elogic\Vendors\Model\ResourceModel\Grid\Collection\VendorsCollection</item>
+            </argument>
+        </arguments>
+    </type>
+
+    <virtualType name="VendorsImageUploader" type="Magento\Catalog\Model\ImageUploader">
+        <arguments>
+            <argument name="baseTmpPath" xsi:type="string">elogic/vendors</argument>
+            <argument name="basePath" xsi:type="string">elogic/vendors</argument>
+            <argument name="allowedExtensions" xsi:type="array">
+                <item name="jpg" xsi:type="string">jpg</item>
+                <item name="jpeg" xsi:type="string">jpeg</item>
+                <item name="webp" xsi:type="string">webp</item>
+                <item name="png" xsi:type="string">png</item>
+            </argument>
+            <argument name="allowedMimeTypes" xsi:type="array">
+                <item name="jpg" xsi:type="string">image/jpg</item>
+                <item name="jpeg" xsi:type="string">image/jpeg</item>
+                <item name="webp" xsi:type="string">image/webp</item>
+                <item name="png" xsi:type="string">image/png</item>
+            </argument>
+            <argument name="required" xsi:type="boolean">false</argument>
+            <argument name="required-file" xsi:type="boolean">false</argument>
+            <argument name="required-entry" xsi:type="boolean">false</argument>
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="required" xsi:type="boolean">false</item>
+                </item>
+            </argument>
+        </arguments>
+    </virtualType>
+    <type name="Elogic\Vendors\Controller\Adminhtml\Index\ImageUploader">
+        <arguments>
+            <argument name="imageUploader" xsi:type="object">VendorsImageUploader</argument>
+        </arguments>
+    </type>
+</config>

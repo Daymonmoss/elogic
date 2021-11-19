@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+    <argument name="data" xsi:type="array">
+        <item name="js_config" xsi:type="array">
+            <item name="provider" xsi:type="string">elogic_vendors_form.elogic_vendors_form_data_source</item>
+            <item name="deps" xsi:type="string">elogic_vendors_form.elogic_vendors_form_data_source</item>
+        </item>
+        <item name="label" xsi:type="string" translate="true">Vendors Form</item>
+        <item name="layout" xsi:type="array">
+            <item name="type" xsi:type="string">tabs</item>
+        </item>
+    </argument>
+    <settings>
+        <buttons>
+            <button name="save" class="Elogic\Vendors\Controller\Adminhtml\Index\Save"/>
+            <button name="delete" class="Elogic\Vendors\Controller\Adminhtml\Index\Delete"/>
+            <button name="back" class="Elogic\Vendors\Controller\Adminhtml\Index\Back"/>
+        </buttons>
+        <namespace>cms_page_form</namespace>
+        <dataScope>data</dataScope>
+        <deps>
+            <dep>cms_page_form.page_form_data_source</dep>
+        </deps>
+    </settings>
+
+    <dataSource name="elogic_vendors_form_data_source">
+        <argument name="dataProvider" xsi:type="configurableObject">
+            <argument name="class" xsi:type="string">Elogic\Vendors\Ui\DataProvider</argument>
+            <argument name="name" xsi:type="string">elogic_vendors_form_data_source</argument>
+            <argument name="primaryFieldName" xsi:type="string">id</argument>
+            <argument name="requestFieldName" xsi:type="string">id</argument>
+        </argument>
+        <argument name="data" xsi:type="array">
+            <item name="js_config" xsi:type="array">
+                <item name="component" xsi:type="string">Magento_Ui/js/form/provider</item>
+            </item>
+        </argument>
+        <settings>
+            <submitUrl path="vendors/index/save" />
+        </settings>
+    </dataSource>
+
+    <fieldset name="vendor">
+        <argument name="data" xsi:type="array">
+            <item name="config" xsi:type="array">
+                <item name="label" xsi:type="string" translate="true">Vendor Form</item>
+            </item>
+        </argument>
+
+        <field name="id">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="visible" xsi:type="boolean">false</item>
+                    <item name="dataType" xsi:type="string">text</item>
+                    <item name="formElement" xsi:type="string">input</item>
+                    <item name="source" xsi:type="string">index</item>
+                </item>
+            </argument>
+        </field>
+
+        <field name="logo" formElement="imageUploader">
+            <settings>
+                <label translate="true">Vendor Logo</label>
+                <componentType>imageUploader</componentType>
+                <validation>
+                    <rule name="required-file" xsi:type="boolean">false</rule>
+                    <rule name="required-entry" xsi:type="boolean">false</rule>
+                </validation>
+                <required>false</required>
+            </settings>
+            <formElements>
+                <imageUploader>
+                    <settings>
+                        <allowedExtensions>jpg jpeg webp png</allowedExtensions>
+                        <maxFileSize>2097152</maxFileSize>
+                        <placeholderType>image</placeholderType>
+                        <visible>true</visible>
+                        <dataType>text</dataType>
+                        <elementTmpl>ui/form/element/uploader/uploader</elementTmpl>
+                        <previewTmpl>ui/form/element/uploader/preview</previewTmpl>
+                        <uploaderConfig>
+                            <param xsi:type="string" name="url">vendors/index/upload</param>
+                        </uploaderConfig>
+                        <initialMediaGalleryOpenSubpath>elogic/vendors</initialMediaGalleryOpenSubpath>
+                        <required>false</required>
+                        <validation>
+                            <rule name="required-file" xsi:type="boolean">false</rule>
+                            <rule name="required-entry" xsi:type="boolean">false</rule>
+                        </validation>
+                    </settings>
+                </imageUploader>
+            </formElements>
+        </field>
+
+        <field name="name">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="label" xsi:type="string">Vendor Name</item>
+                    <item name="visible" xsi:type="boolean">true</item>
+                    <item name="dataType" xsi:type="string">text</item>
+                    <item name="formElement" xsi:type="string">input</item>
+                    <item name="source" xsi:type="string">index</item>
+                </item>
+            </argument>
+        </field>
+
+        <field name="description">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="label" xsi:type="string">Vendor Description</item>
+                    <item name="visible" xsi:type="boolean">true</item>
+                    <item name="dataType" xsi:type="string">text</item>
+                    <item name="formElement" xsi:type="string">textarea</item>
+                    <item name="source" xsi:type="string">index</item>
+                </item>
+            </argument>
+        </field>
+    </fieldset>
+</form>

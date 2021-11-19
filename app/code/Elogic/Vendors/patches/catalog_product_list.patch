@@ -1,0 +1,22 @@
+--- vendor/magento/module-catalog/view/frontend/templates/product/list.phtml	2021-11-11 22:06:41.645983707 +0200
++++ app/code/Elogic/Vendors/view/frontend/templates/product/list.phtml	2021-11-11 21:42:29.005603548 +0200
+@@ -70,6 +70,19 @@
+                                 <?= /* @noEscape */ $_helper->productAttribute($_product, $_product->getName(), 'name') ?>
+                             </a>
+                         </strong>
++
++                        <?php
++                        /** @var Elogic\Vendors\ViewModel\VendorView $viewModel */
++                        $viewModel = $this->getData('elogic.vendors.view_model');
++                        $elogicVendor = $viewModel->getProductElogicVendor($_product);
++                        if (!empty($elogicVendor)) : ?>
++                            <div class="product-item-attribute elogic_vendor">
++                                <h3>Vendor: <?= $elogicVendor['label']; ?></h3>
++                                <img src="<?= $elogicVendor['logo']; ?>" alt="<?= $elogicVendor['label']; ?>" width="50px" height="50px" />
++                                <p><?= $elogicVendor['description']; ?></p>
++                            </div>
++                        <?php endif; ?>
++
+                         <?= $block->getReviewsSummaryHtml($_product, $templateType) ?>
+                         <?= /* @noEscape */ $block->getProductPrice($_product) ?>
+                         <?php if ($_product->isAvailable()) :?>

@@ -1,0 +1,16 @@
+<?php
+/** @var  Magento\Catalog\Block\Product\View $block */
+$product = $block->getProduct();
+/** @var Elogic\Vendors\ViewModel\VendorView $viewModel */
+$viewModel = $this->getData('elogic.vendors.view_model');
+$elogicVendor = $viewModel->getProductElogicVendor($product);
+if (!empty($elogicVendor)) : ?>
+    <div class="product attribute elogic_vendor">
+        <h3>Vendor: <?= $elogicVendor['label']; ?></h3>
+        <div>
+         <img src="<?= $elogicVendor['logo']; ?>" alt="<?= $elogicVendor['label']; ?>" />
+         <p><?= $elogicVendor['description']; ?></p>
+        </div>
+    </div>
+<?php endif; ?>
+
