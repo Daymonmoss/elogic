@@ -1,4 +1,10 @@
-#  ![Elogic logo](/app/code/Elogic/Vendors/view/adminhtml/web/img/logo.svg?raw=true) Task for Magento 2 Backend Developer
+<svg width="100" height="50" xmlns="http://www.w3.org/2000/svg" version="1.1" xml:space="preserve">
+     <path d="m86.49,50l-56.42,0a35.56,35.56 0 0 1 41.81,-28.35c0.72,0.63 1.42,1.27 2.1,2a43,43 0 0 1 12.51,26.35zm1.06,
+              -50l-75,0a12.51,12.51 0 0 0 -12.55,12.51l0,25a12.41,12.41 0 0 0 1.31,5.57a43,43 0 0 1 11.26,-19.48a43.52,
+              43.52 0 0 1 59.31,-2a35.57,35.57 0 0 1 26.44,22.27a12.43,12.43 0 0 0 1.73,-6.35l0,-25a12.5,
+              12.5 0 0 0 -12.5,-12.52z" fill="#aaa6a0"/>
+</svg>
+<h1>Task for Magento 2 Backend Developer</h1>
 &emsp;Create a module for Magento 2, which adds the entity of the "Vendor" (a separate
 table, with a grid in the admin, filters, editing form, etc.). Vendor should have a Name,
 Description, Date Added and Logo (image).  
