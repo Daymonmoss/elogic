@@ -1,9 +1,4 @@
-<style>
-img[src*="#logo"] {
-left:0;
-position:relative
-}
-</style>
+<style>img[src*="#logo"]{left:0;position:relative}</style>
 #  ![Elogic logo](https://github.com/Daymonmoss/elogic/blob/main/app/code/Elogic/Vendors/view/adminhtml/web/img/logo.svg#logo) Task for Magento 2 Backend Developer
 &emsp;Create a module for Magento 2, which adds the entity of the "Vendor" (a separate
 table, with a grid in the admin, filters, editing form, etc.). Vendor should have a Name,
