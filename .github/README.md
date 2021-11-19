@@ -1,4 +1,7 @@
-#  ![Elogic logo](https://github.com/Daymonmoss/elogic/blob/main/app/code/Elogic/Vendors/view/adminhtml/web/img/logo.svg) [style="left:0; position:relative;"] Task for Magento 2 Backend Developer
+<style>
+em > img {left:0; position:relative}
+</style>
+#  ![Elogic logo](https://github.com/Daymonmoss/elogic/blob/main/app/code/Elogic/Vendors/view/adminhtml/web/img/logo.svg) Task for Magento 2 Backend Developer
 &emsp;Create a module for Magento 2, which adds the entity of the "Vendor" (a separate
 table, with a grid in the admin, filters, editing form, etc.). Vendor should have a Name,
 Description, Date Added and Logo (image).  
