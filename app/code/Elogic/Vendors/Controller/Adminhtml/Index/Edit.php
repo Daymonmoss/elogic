@@ -14,13 +14,6 @@ use Elogic\Vendors\Model\VendorsModelFactory;
 class Edit extends AbstractController implements HttpGetActionInterface
 {
     /**
-     * Authorization level of a basic admin session
-     *
-     * @see isAllowed()
-     */
-    const ADMIN_RESOURCE = 'Elogic_Vendors::index_save';
-
-    /**
      * @var PageFactory
      */
     protected $resultPageFactory;
