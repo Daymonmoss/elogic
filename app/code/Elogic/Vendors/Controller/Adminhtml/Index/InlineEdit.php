@@ -5,7 +5,7 @@ namespace Elogic\Vendors\Controller\Adminhtml\Index;
 
 use Magento\Framework\Controller\ResultInterface;
 use Magento\Framework\Exception\LocalizedException;
-use Elogic\Vendors\Model\VendorsModel;
+use Elogic\Vendors\Api\Data\VendorsInterface;
 
 
 
@@ -59,11 +59,11 @@ class InlineEdit extends AbstractController
     /**
      * Add vendor title to error message
      *
-     * @param VendorsModel $vendor
+     * @param VendorsInterface $vendor
      * @param string $errorText
      * @return string
      */
-    protected function getErrorWithVendorId(VendorsModel $vendor, string $errorText) :string
+    protected function getErrorWithVendorId(VendorsInterface $vendor, string $errorText) :string
     {
         return '[Vendor ID: ' . $vendor->getId() . '] ' . $errorText;
     }

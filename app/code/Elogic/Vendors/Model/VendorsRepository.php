@@ -70,7 +70,7 @@ class VendorsRepository implements VendorsRepositoryInterface
      * @return VendorsResourceModel
      * @throws CouldNotSaveException
      */
-    public function save(VendorsModel $model) :VendorsResourceModel
+    public function save(VendorsInterface $model) :VendorsResourceModel
     {
         try {
             return $this->vendorsResourceModel->save($model);
@@ -84,7 +84,7 @@ class VendorsRepository implements VendorsRepositoryInterface
      * @return bool
      * @throws CouldNotDeleteException
      */
-    public function delete(VendorsModel $model) :bool
+    public function delete(VendorsInterface $model) :bool
     {
         try {
             $this->vendorsResourceModel->delete($model);
@@ -115,7 +115,7 @@ class VendorsRepository implements VendorsRepositoryInterface
      * @return VendorsModel|VendorsInterface
      * @throws NoSuchEntityException
      */
-    public function getById(?string $id) :VendorsModel
+    public function getById(?string $id) :VendorsInterface
     {
         try {
             $model = $this->vendorsModelFactory->create();

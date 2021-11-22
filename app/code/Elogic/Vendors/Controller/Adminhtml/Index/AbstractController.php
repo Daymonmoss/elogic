@@ -17,6 +17,7 @@ use Elogic\Vendors\Model\ResourceModel\VendorsResourceModel;
 abstract class AbstractController extends Action
 {
     const DEFAULT_ACTION_PATH = 'vendors/index/';
+
     /**
      * @var VendorsModelFactory
      */
@@ -54,6 +55,16 @@ abstract class AbstractController extends Action
      */
     protected $imageUploader;
 
+    /**
+     * @param Context $context
+     * @param Filter $filter
+     * @param JsonFactory $jsonFactory
+     * @param ImageUploader $imageUploader
+     * @param VendorsCollectionFactory $vendorsCollectionFactory
+     * @param VendorsModelFactory $vendorsModelFactory
+     * @param VendorsRepositoryInterface $vendorsRepository
+     * @param VendorsResourceModel $vendorsResourceModel
+     */
     public function __construct(
         Context $context,
         Filter $filter,

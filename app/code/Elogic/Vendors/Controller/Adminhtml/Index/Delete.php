@@ -7,7 +7,6 @@ use Magento\Framework\App\ResponseInterface;
 use Magento\Framework\Controller\ResultInterface;
 use Magento\Framework\Controller\ResultFactory;
 use Magento\Framework\View\Element\UiComponent\Control\ButtonProviderInterface;
-use Elogic\Vendors\Model\VendorsModel;
 use Elogic\Vendors\Model\VendorsModelFactory;
 
 class Delete extends AbstractController implements ButtonProviderInterface
@@ -54,9 +53,8 @@ class Delete extends AbstractController implements ButtonProviderInterface
 
         if ($id) {
             try {
-                $vendorsModelFactory = $this->_objectManager->create(VendorsModel::class);
-                $vendorsModelFactory->load($id);
-                $vendorsModelFactory->delete();
+                $model = $this->vendorsRepository->getById($id);
+                $this->vendorsRepository->delete($model);
                 $this->messageManager->addSuccessMessage(__("You have deleted the vendor!"));
                 return $redirect->setPath(self::DEFAULT_ACTION_PATH . 'index');
             } catch (\Exception $e) {

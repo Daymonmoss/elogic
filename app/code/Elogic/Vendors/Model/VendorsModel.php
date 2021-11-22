@@ -8,7 +8,7 @@ use Elogic\Vendors\Api\Data\VendorsInterface;
 use Elogic\Vendors\Model\ResourceModel\VendorsResourceModel;
 
 
-class VendorsModel extends AbstractExtensibleModel
+class VendorsModel extends AbstractExtensibleModel implements VendorsInterface
 {
 
     protected function _construct() :void
@@ -34,9 +34,9 @@ class VendorsModel extends AbstractExtensibleModel
 
     /**
      * @param string|null $logo
-     * @return VendorsModel
+     * @return VendorsInterface
      */
-    public function setLogo(?string $logo) :VendorsModel
+    public function setLogo(?string $logo) :VendorsInterface
     {
         return $this->setData(VendorsInterface::FIELD_NAME_LOGO, $logo);
     }
@@ -53,7 +53,7 @@ class VendorsModel extends AbstractExtensibleModel
      * @param string|null $name
      * @return VendorsModel
      */
-    public function setName(?string $name) :VendorsModel
+    public function setName(?string $name) :VendorsInterface
     {
         return $this->setData(VendorsInterface::FIELD_NAME_NAME, $name);
     }
@@ -68,9 +68,9 @@ class VendorsModel extends AbstractExtensibleModel
 
     /**
      * @param string|null $description
-     * @return VendorsModel
+     * @return VendorsInterface
      */
-    public function setDescription(?string $description) :VendorsModel
+    public function setDescription(?string $description) :VendorsInterface
     {
         return $this->setData(VendorsInterface::FIELD_NAME_DESCRIPTION, $description);
     }

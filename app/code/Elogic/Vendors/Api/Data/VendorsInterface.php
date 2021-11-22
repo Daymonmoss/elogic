@@ -28,7 +28,7 @@ interface VendorsInterface
      * @param string|null $logo
      * @return VendorsInterface|VendorsModel
      */
-    public function setLogo(?string $logo) :VendorsModel;
+    public function setLogo(?string $logo) :VendorsInterface;
 
     /**
      * @return string|null
@@ -39,7 +39,7 @@ interface VendorsInterface
      * @param string|null $name
      * @return VendorsInterface|VendorsModel
      */
-    public function setName(?string $name) :VendorsModel;
+    public function setName(?string $name) :VendorsInterface;
 
     /**
      * @return string|null
@@ -50,7 +50,7 @@ interface VendorsInterface
      * @param string|null $description
      * @return VendorsInterface|VendorsModel
      */
-    public function setDescription(?string $description) :VendorsModel;
+    public function setDescription(?string $description) :VendorsInterface;
 
 
     /**

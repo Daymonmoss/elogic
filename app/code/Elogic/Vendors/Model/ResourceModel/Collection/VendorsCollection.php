@@ -3,7 +3,7 @@ declare(strict_types=1);
 
 namespace Elogic\Vendors\Model\ResourceModel\Collection;
 
-use \Elogic\Vendors\Api\Data\VendorsInterface;
+use Elogic\Vendors\Api\Data\VendorsInterface;
 use Elogic\Vendors\Model\ResourceModel\VendorsResourceModel;
 use Elogic\Vendors\Model\VendorsModel;
 use Magento\Framework\App\ResourceConnection;

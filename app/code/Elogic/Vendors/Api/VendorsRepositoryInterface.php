@@ -4,7 +4,7 @@ declare(strict_types=1);
 namespace Elogic\Vendors\Api;
 
 use Elogic\Vendors\Model\ResourceModel\VendorsResourceModel;
-use Elogic\Vendors\Model\VendorsModel;
+use Elogic\Vendors\Api\Data\VendorsInterface;
 use Magento\Framework\Api\SearchCriteriaInterface;
 use Magento\Framework\Api\SearchResultsInterface;
 use Magento\Framework\Exception\CouldNotDeleteException;
@@ -14,23 +14,23 @@ interface VendorsRepositoryInterface
 {
     /**
      * @param string|null $id
-     * @return VendorsModel
+     * @return VendorsInterface
      * @throws NotFoundException
      */
-    public function getById(?string $id) :VendorsModel ;
+    public function getById(?string $id) :VendorsInterface ;
 
     /**
-     * @param VendorsModel $model
+     * @param VendorsInterface $model
      * @return VendorsResourceModel
      */
-    public function save(VendorsModel $model) :VendorsResourceModel;
+    public function save(VendorsInterface $model) :VendorsResourceModel;
 
     /**
-     * @param VendorsModel $model
+     * @param VendorsInterface $model
      * @return true
      * @throws CouldNotDeleteException
      */
-    public function delete(VendorsModel $model) :bool;
+    public function delete(VendorsInterface $model) :bool;
 
     /**
      * @param string $id
