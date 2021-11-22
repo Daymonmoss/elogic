@@ -42,8 +42,6 @@ class VendorsFrontend extends AbstractFrontend
         $value = $object->getData($this->getAttribute()->getAttributeCode());
         $attributeCode = $this->getAttribute()->getAttributeCode();
         $attributeDetails = $this->eavConfig->getAttribute("catalog_product", $attributeCode);
-
-        $return = $attributeDetails->getSource()->getOptionById($value);
-        return $return;
+        return $attributeDetails->getSource()->getOptionById($value);
     }
 }
