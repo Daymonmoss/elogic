@@ -78,13 +78,6 @@ class VendorsAttribute implements DataPatchInterface
             19
         );
 
-        $eavSetup->addAttributeToGroup(
-            Product::ENTITY,
-            'Bottom',
-            'Product Details',
-            'elogic_vendor',
-            19
-        );
         $this->moduleDataSetup->endSetup();
     }
 
